@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: radial-gradient(#4287f5, #9cb3d9);
+    background-image: radial-gradient(#4287f5, #9cd9ca);
 }
 
 .upload-container {
@@ -86,7 +86,10 @@ h1 {
 }
 
 .remove-btn {
-  background: #ff4d4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff4d4f; 
   color: white;
   border: none;
   border-radius: 50%;

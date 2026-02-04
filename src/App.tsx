@@ -110,9 +110,10 @@ function FileUploader() {
 
   return (
     <div className="upload-container">
-      <h1>Upload PDF & CSV files</h1>
+      <h1>Open Course Search</h1>
       <p className="subtitle">
         Maximum {MAX_FILES} files • only .pdf and .csv allowed
+        <br /> <span style={{ color: '#65d282' }}>For MRU CS && BCIS </span>
       </p>
 
       <form onSubmit={handleSubmit}>
