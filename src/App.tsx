@@ -1,24 +1,28 @@
-import { useState } from 'react'
+import { useState, ChangeEvent, SyntheticEvent } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function FileUploader() {
+  const MAX_FILES = 3;
+  const ALLOWED_EXTENSIONS = ['.pdf', '.csv'];
+  const ALLOWED_MIME_TYPES = ['application/pdf', 'text/csv'];
+
+  const [files, setFiles] = useState<File[]>([]);
+  const [uploading, setUploading] = useState<false>;
+  const [message, setMessage] = useState<string | null>(null);
+
+  const handleFileChange = (e: ChangeEvent<HTMLFormElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files);
+      setFiles(prev => [...prev, ...newFiles]);
+      setMessage(null);
+    }
+  };
 
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+ 
     </>
   )
 }
 
-export default App
+export default FileUploader
